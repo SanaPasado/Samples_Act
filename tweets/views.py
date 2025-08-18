@@ -6,7 +6,12 @@ class TweetDetailView(DetailView):
     template_name = 'detail_view.html'
 
     def get_object(self, queryset=Tweet.objects.all()):
-        return Tweet.objects.get(id=1)
+        print (self.kwargs)
+        #kwargs so that we can access al keyword arguments can pk or the id
+        pk = self.kwargs['pk']
+        print (pk)
+        return Tweet.objects.get(id=pk)
+        #id becomes pk instead of 1 (assigned value only)
 
 class TweetListView(ListView):
     queryset = Tweet.objects.all()
