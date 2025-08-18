@@ -22,6 +22,8 @@ from .views import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', home_page, name='home'),
+    path('contact/', contact_page, name='contact_page'),
     path('tweet/', include('tweets.urls'))
 ]
 
