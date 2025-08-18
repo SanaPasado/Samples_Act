@@ -1,11 +1,15 @@
 from django.shortcuts import render
 
+from ACTIVITY_SAMPLE.forms import ContactForm
+
 
 def home_page(request):
     return render(request, 'home.html')
 
 def contact_page(request):
-    if request.method == 'POST':
-            print(request.POST)#.get('full_name')
-        #you can alter get or just remove it to get what model elements you want
-    return render(request, 'contact/contact.html')
+    contact_form = ContactForm(request.POST or None)
+
+    context = {
+        'form': contact_form,
+    }
+    return render(request, "contact/contact.html", context)
