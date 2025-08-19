@@ -22,6 +22,7 @@ from django.conf.urls.static import static
 import accounts
 from .views import *
 
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', home_page, name='home'),
@@ -29,7 +30,7 @@ urlpatterns = [
 
     path ('register/', include('accounts.urls')),
 
-    path('tweet/', include('tweets.urls'))
+    path('tweet/', include('tweets.urls', namespace='tweets')),
 ]
 
 if settings.DEBUG:
