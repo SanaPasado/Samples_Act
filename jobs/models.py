@@ -11,8 +11,6 @@ class Job(models.Model):
     min_offer = models.CharField
     max_offer = models.CharField
     location = models.CharField
-
-
     def __str__(self):
         return self.content
 

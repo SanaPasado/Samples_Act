@@ -28,12 +28,12 @@ def job_list_view(request):
 
 
 
-class TweetDeleteView(DeleteView):
+class JobDeleteView(DeleteView):
     model = Job
     template_name = 'delete_view.html'
     login_url = '/admin/login/'
 
-class TweetUpdateView(LoginRequiredMixin, FormUserMixin, UpdateView):
+class JobUpdateView(LoginRequiredMixin, FormUserMixin, UpdateView):
     template_name = 'update_view.html'
     queryset = Job.objects.all()
     login_url = '/admin/login/'

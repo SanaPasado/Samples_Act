@@ -30,6 +30,8 @@ urlpatterns = [
 
     path ('register/', include('accounts.urls')),
 
+    path ('jobs/', include('jobs.urls')),
+
     path('tweet/', include('tweets.urls', namespace='tweets')),
 
 
