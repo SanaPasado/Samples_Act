@@ -18,6 +18,8 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
+
+import accounts
 from .views import *
 
 urlpatterns = [
@@ -25,7 +27,8 @@ urlpatterns = [
     path('', home_page, name='home'),
     path('contact/', contact_page, name='contact_page'),
 
-    path ('register/', register_page, name='register_page'),
+    path ('register/', include('accounts.urls')),
+
     path('tweet/', include('tweets.urls'))
 ]
 
