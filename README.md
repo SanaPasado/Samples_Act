@@ -1,3 +1,5 @@
+
+INSTALL IN GITHUB DESKTOP OPEN QUIZ BRANCH
 install requirements.txt
 py manage.py runsrver 
 create a superuser
